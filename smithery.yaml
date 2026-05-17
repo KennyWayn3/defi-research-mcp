@@ -1,0 +1,22 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required:
+      - defiApiKey
+    properties:
+      defiApiKey:
+        type: string
+        description: "API key from https://extant-torrie-nonrepealable.ngrok-free.dev/buy ($10 for 100 credits)"
+      defiApiUrl:
+        type: string
+        description: "API base URL (default: https://extant-torrie-nonrepealable.ngrok-free.dev)"
+  commandFunction: |-
+    (config) => ({
+      command: 'node',
+      args: ['src/index.js'],
+      env: {
+        DEFI_API_KEY: config.defiApiKey,
+        DEFI_API_URL: config.defiApiUrl || 'https://extant-torrie-nonrepealable.ngrok-free.dev'
+      }
+    })

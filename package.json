@@ -1,0 +1,17 @@
+{
+  "name": "defi-research-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for DeFi token research - gas prices, prices, liquidity, and deep research. Requires API key from defi-research-api.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "defi-research-mcp": "./src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.22.0"
+  }
+}
